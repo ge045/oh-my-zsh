@@ -11,9 +11,9 @@ function gnb() {
 	local link=$1
 	shift 1
 
-	geeknote create --title '"'"$link"'"' \
-	       	--content '"'"$link"'"' \
-		--notebook '"Bookmarks"' \
-		--tags '"readings"'
-		#--tags '"'"$@"'"'
+	geeknote create --title $link \
+	       	--content $link \
+		--notebook Bookmarks \
+		--tags readings
+		#--tags $@
 }
