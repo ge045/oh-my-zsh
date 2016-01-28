@@ -28,3 +28,5 @@ function gns() {
 	geeknote find --search $pattern --notebooks catalysts --content-search
 }
 
+alias gnl='geeknote find --notebooks catalysts'
+
