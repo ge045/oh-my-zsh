@@ -27,6 +27,10 @@ unmark() {
 	rm -i "$MARKPATH/$1"
 }
 
+getmark() {
+	readlink "${MARKPATH}/${1}"
+}
+
 marks() {
 	for link in $MARKPATH/*(@); do
 		local markname="$fg[cyan]${link:t}$reset_color"
@@ -47,6 +51,7 @@ _completemarks() {
 }
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
+compctl -K _completemarks getmark
 
 _mark_expansion() {
 	setopt extendedglob
